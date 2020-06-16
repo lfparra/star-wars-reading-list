@@ -5,7 +5,7 @@ const PlanetCard = (props) => {
         <>
             <div className="card-group">
                 <div className="card">
-                    <img src="https://lumiere-a.akamaihd.net/v1/images/tatooine-main_127c43c7.jpeg?region=164%2C0%2C953%2C536"
+                <img src={`https://starwars-visualguide.com/assets/img/planets/${props.img}.jpg`} 
                         className="card-img-top" alt="..." />
                     <div className="card-body">
                         <h5 className="card-title">{props.name}</h5>

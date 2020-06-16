@@ -12,7 +12,7 @@ const Header = () => {
                         alt=""
                         loading="lazy" />
                 </a>
-                <div className="dropdown align-middle">
+                <div className="dropdown">
                     <button className="btn btn-dark dropdown-toggle btn-md mr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Favorites Num
                     </button>

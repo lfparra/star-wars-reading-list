@@ -6,7 +6,7 @@ import PlanetCard from './components/planet-card';
 const App = () => {
 
     const [character, setCharacter] = useState({
-        results : [],
+        results: [],
     })
 
     const getCharacters = (url) => {
@@ -31,7 +31,7 @@ const App = () => {
     }
 
     const [planets, setPlanets] = useState({
-        results : [],
+        results: [],
     })
 
     const getPlanets = (url) => {
@@ -62,49 +62,52 @@ const App = () => {
 
     return (
         <>
-            <Header />
-            <div className="menu">
-                <h2>Characters</h2>
-                <div className="carrousel">
-                    {
-                        character.results.length > 0 ?
-                            (
-                                character.results.map((elem, index, arr) => {
-                                    return (
-                                        <CharacterCard key={index} name={elem.name} hair_color={elem.hair_color} eye_color={elem.eye_color}/>
-                                    )
-                                })
-                            ) : (
-                                <div className="d-flex justify-content-center ml-auto mr-auto">
-                                    <div className="spinner-border" role="status">
-                                        <span className="sr-only">Loading...</span>
+            <div className="container-fluid">
+                <Header />
+                <div className="menu">
+                    <h3>Characters</h3>
+                    <div className="carrousel">
+                        {
+                            character.results.length > 0 ?
+                                (
+                                    character.results.map((elem, index, arr) => {
+                                        return (
+                                            <CharacterCard key={index} img={index + 1} name={elem.name} gender={elem.gender} hair_color={elem.hair_color} eye_color={elem.eye_color} />
+                                        )
+                                    })
+                                ) : (
+                                    <div className="d-flex justify-content-center ml-auto mr-auto">
+                                        <div className="spinner-border" role="status">
+                                            <span className="sr-only">Loading...</span>
+                                        </div>
                                     </div>
-                                </div>
-                            )
-                    }
-       
+                                )
+                        }
+
+                    </div>
                 </div>
-            </div>
-            <div className="menu">
-                <h2>Planets</h2>
-                <div className="carrousel">
-                {
-                        planets.results.length > 0 ?
-                            (
-                                planets.results.map((elem, index, arr) => {
-                                    return (
-                                        <PlanetCard key={index} name={elem.name} population={elem.population} terrain={elem.terrain}/>
-                                    )
-                                })
-                            ) : (
-                                <div className="d-flex justify-content-center ml-auto mr-auto">
-                                    <div className="spinner-border" role="status">
-                                        <span className="sr-only">Loading...</span>
+                <div className="menu">
+                    <h2>Planets</h2>
+                    <div className="carrousel">
+                        {
+                            planets.results.length > 0 ?
+                                (
+                                    planets.results.map((elem, index, arr) => {
+                                        return (
+                                            <PlanetCard key={index} img={index + 1} name={elem.name} population={Intl.NumberFormat().format(parseInt(elem.population))} terrain={elem.terrain} />
+                                        )
+                                    })
+                                ) : (
+                                    <div className="d-flex justify-content-center ml-auto mr-auto">
+                                        <div className="spinner-border" role="status">
+                                            <span className="sr-only">Loading...</span>
+                                        </div>
                                     </div>
-                                </div>
-                            )
-                    }
+                                )
+                        }
+                    </div>
                 </div>
+
             </div>
 
         </>
