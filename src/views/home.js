@@ -1,123 +1,50 @@
-import React, { useState, useEffect } from 'react';
-import Header from '../components/header';
+import React, { useState, useEffect, useContext } from 'react';
+import { Context } from '../store/layoutContext';
 import { Link } from 'react-router-dom';
 import CharacterCard from '../components/character-card';
 import PlanetCard from '../components/planet-card';
 
-const Home = () => {
+const Home = (props) => {
 
-    const [characters, setCharacters] = useState({
-        results: [],
-        perPage: 0
-    })
-
-    const getCharacters = (url) => {
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-
-        var requestOptions = {
-            method: 'GET',
-            headers: myHeaders,
-            redirect: 'follow'
-        };
-
-        fetch(url, requestOptions)
-            .then(response => response.json())
-            .then(result => {
-                console.log(result);
-                setCharacters(prevState => {
-                    return { ...prevState, ...result }
-
-                })
-            })
-            .catch(error => console.log('error', error));
-    }
-
-    const [planets, setPlanets] = useState({
-        results: [],
-    })
-
-    const getPlanets = (url) => {
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-
-        var requestOptions = {
-            method: 'GET',
-            headers: myHeaders,
-            redirect: 'follow'
-        };
-
-        fetch(url, requestOptions)
-            .then(response => response.json())
-            .then(result => {
-                console.log(result);
-                setPlanets(prevState => {
-                    return { ...prevState, ...result }
-                })
-            })
-            .catch(error => console.log('error', error));
-    }
-
-
-    const nextPage = () => {
-
-        setCharacters(prevState => {
-            return { ...prevState, perPage: prevState.perPage + 10 }
-        });
-
-        getCharacters(characters.next.replace("http", "https"));
-        
-    }
-    const previousPage = () => {
-
-        setCharacters(prevState => {
-            return { ...prevState, perPage: prevState.perPage - 10 }
-        });
-
-        getCharacters(characters.previous.replace("http", "https"));
-        
-    }
-
-    useEffect(() => {
-        getCharacters("https://swapi.dev/api/people/");
-        getPlanets("https://swapi.dev/api/planets/")
-    }, []);
+    const { store, actions } = useContext(Context);
 
     return (
         <>
             <div className="container-fluid">
-                <Header />
+                
                 <div className="menu">
                     <h2>Characters</h2>
-                    <div className="cambioPagina d-flex">
+                    {/* <div className="cambioPagina d-flex">
                         {
-                            characters.previous === null ?
+                            store.characters.previous === null ?
                                 (
                                     <button onClick={() => nextPage()} className="btn btn-light ml-auto">Next</button>
 
-                                ) : (characters.next === null ? (
+                                ) : (store.characters.next === null ? (
 
                                     <button onClick={() => previousPage()}className="btn btn-light mr-auto">Previous</button>
                                 ) : (
                                         <>
-                                            <button onClick={() => previousPage()}className="btn btn-light mr-auto">Previous</button>
+                                            <button onClick={() => previousPage()} className="btn btn-light mr-auto">Previous</button>
                                             <button onClick={() => nextPage()} className="btn btn-light ml-auto">Next</button>
                                         </>
                                     )
                                 )
                         }
 
-                    </div>
+                    </div> */}
                     <div className="carrousel">
                         {
-                            characters.results.length > 0 ?
+                            store.characters.results.length > 0 ?
                                 (
-                                    characters.results.map((elem, index, arr) => {
+                                    store.characters.results.map((elem, index, arr) => {
                                         return (
                                             
                                             <CharacterCard key={index}
-                                                img={index + characters.perPage + 1 >= 18? index + characters.perPage + 2:index + characters.perPage + 1}
-                                                name={elem.name} gender={elem.gender}
+                                                /* img={index + characters.perPage + 1 >= 18? index + characters.perPage + 2 : index + characters.perPage + 1} */
+                                                url={elem.url}
+                                                name={elem.name}
+                                                gender={elem.gender}
                                                 hair_color={elem.hair_color}
                                                 eye_color={elem.eye_color} />
                                         )
@@ -139,11 +66,11 @@ const Home = () => {
                     <h2>Planets</h2>
                     <div className="carrousel">
                         {
-                            planets.results.length > 0 ?
+                            store.planets.results.length > 0 ?
                                 (
-                                    planets.results.map((elem, index, arr) => {
+                                    store.planets.results.map((elem, index, arr) => {
                                         return (
-                                            <PlanetCard key={index} img={index + 1} name={elem.name} population={Intl.NumberFormat().format(parseInt(elem.population))} terrain={elem.terrain} />
+                                            <PlanetCard key={index} url={elem.url} name={elem.name} population={Intl.NumberFormat().format(parseInt(elem.population))} terrain={elem.terrain} />
                                         )
                                     })
                                 ) : (

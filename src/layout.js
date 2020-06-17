@@ -4,11 +4,15 @@ import Home from './views/home';
 import CharacterPage from './views/characterPage';
 import PlanetPage from './views/planetPage';
 import NotFound from './views/notFound';
+import Header from './components/header';
+import inyectContext from './store/layoutContext';
 
-const Layout = () => {
+
+const Layout = (props) => {
     return (
         <>
             <BrowserRouter>
+                <Header />
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/characterPage/:name" component={CharacterPage} />
@@ -21,4 +25,4 @@ const Layout = () => {
 
 }
 
-export default Layout;
+export default inyectContext(Layout);

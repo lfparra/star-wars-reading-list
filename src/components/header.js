@@ -14,7 +14,7 @@ const Header = () => {
                 </Link>
                 <div className="dropdown">
                     <button className="btn btn-dark dropdown-toggle btn-md mr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Favorites Num
+                        Favorites <span>3</span>
                     </button>
                     <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                         <a className="dropdown-item d-flex mr-1" href="/">Personaje 1<i className="fas fa-trash-alt ml-auto"></i></a>

@@ -8,8 +8,8 @@ const PlanetCard = (props) => {
             <div className="card-group justify-content-center ml-auto mr-auto">
                 <div className="card">
                     <Link className="card-img" to={`/planetPage/${props.name}`}>
-                        <img src={`https://starwars-visualguide.com/assets/img/planets/${props.img}.jpg`}
-                            className="card-img-top" alt="..." />
+                        <img src={"https://starwars-visualguide.com/assets/img/planets/" + (props.url.replace("http://swapi.dev/api/planets/","").replace("/", "")) + ".jpg"}
+                            className="card-img-top" alt={props.name} />
                     </Link>
 
                     <div className="card-body">

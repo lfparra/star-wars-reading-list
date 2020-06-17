@@ -8,7 +8,7 @@ const CharacterCard = (props) => {
         <div className="card-group justify-content-center ml-auto mr-auto">
             <div className="card ">
                 <Link className="card-img" to={`/characterPage/${props.name}`}>
-                    <img src={`https://starwars-visualguide.com/assets/img/characters/${props.img}.jpg`} 
+                    <img src={"https://starwars-visualguide.com/assets/img/characters/" + (props.url.replace("http://swapi.dev/api/people/","").replace("/", "")) + ".jpg"}
                     className="card-img-top" alt={props.name} />
                 </Link>
                 

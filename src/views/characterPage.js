@@ -7,7 +7,7 @@ const CharacterPage = () => {
     return (
         <>
             <div className="container-fluid">
-                <Header />
+                
                 <div className="page d-flex justify-content-center">
                     <div class="card mb-3 " /* style="max-width: 540px;" */>
                         <div class="row no-gutters">
@@ -16,7 +16,7 @@ const CharacterPage = () => {
                                     className="card-img"
                                     alt="..." />
                             </div>
-                            <div class=" offset-1 col-6">
+                            <div class=" col-7">
                                 <div class="card-body">
                                     <h2 class="card-title">Nombre personaje</h2>
                                     <h5>Height: </h5>
