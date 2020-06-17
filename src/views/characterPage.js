@@ -16,7 +16,7 @@ const CharacterPage = () => {
                                     className="card-img"
                                     alt="..." />
                             </div>
-                            <div class=" col-7">
+                            <div class=" offset-1 col-6">
                                 <div class="card-body">
                                     <h2 class="card-title">Nombre personaje</h2>
                                     <h5>Height: </h5>

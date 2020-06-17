@@ -1,6 +1,28 @@
 h2 {
-    margin: 15px 0px;
+    margin: 5px 0px;
 }
+
+.cambioPagina {
+    margin: 5px 30px 5px 0;
+}
+.cambioPagina > .btn {
+    background-color: #FFE81F;
+    color: black;
+    border: none;
+    outline: none;
+}
+
+.cambioPagina > .btn:hover {
+    color: #FFE81F;
+    background-color: #1B1B25;
+    border: 1px solid #FFE81F;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 .menu {
     width: 100%;
 }
@@ -25,6 +47,7 @@ h2 {
 
 .card {
     width: 18rem;
+    /* height: 18rem; */
     background-color: #1B1B25;
     margin: 10px 20px 0px 0px;
     border: 1px solid #FFE81F;    

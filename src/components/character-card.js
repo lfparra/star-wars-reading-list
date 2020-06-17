@@ -5,7 +5,7 @@ import '../styles/character-planet-card.css'
 const CharacterCard = (props) => {
     return (
         <>
-        <div className="card-group">
+        <div className="card-group justify-content-center ml-auto mr-auto">
             <div className="card ">
                 <Link className="card-img" to={`/characterPage/${props.name}`}>
                     <img src={`https://starwars-visualguide.com/assets/img/characters/${props.img}.jpg`} 
@@ -18,7 +18,7 @@ const CharacterCard = (props) => {
                     <p className="card-text">Hair-Color: {props.hair_color}</p>
                     <p className="card-text">Eye-Color: {props.eye_color}</p>
                     <div className="card-buttons d-flex">
-                        <a href="/" className="btn btn-light">Learn more!</a>
+                        <Link to={`/characterPage/${props.name}`} className="btn btn-light">Learn more!</Link>
                         <a href="/" className="btn btn-light ml-auto"><i className="far fa-heart"></i></a>
                     </div>
                 </div>
