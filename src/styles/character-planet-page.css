@@ -1,0 +1,19 @@
+.page .card{
+     width: 100%; 
+}
+
+.page .row {
+    height: 40rem;
+}
+.page img {
+    height: 40rem;
+    object-fit: fill; 
+}
+
+.page h2 {
+    margin-bottom: 25px;
+}
+
+.page h5 {
+    margin: 20px;
+}

@@ -1,17 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import '../styles/header.css'
 
 const Header = () => {
     return (
         <>
             <nav className="navbar navbar-light sticky-top" >
-                <a className="navbar-brand align-middle" href="/">
+                <Link className="navbar-brand align-middle" to="/">
                     <img src="https://clipart.info/images/ccovers/1513370389Star%20Wars%20Logo%20transparent%20PNG.png"
-                        width="130"
-                        height="100"
                         className="d-inline-block align-top"
-                        alt=""
+                        alt="Home"
                         loading="lazy" />
-                </a>
+                </Link>
                 <div className="dropdown">
                     <button className="btn btn-dark dropdown-toggle btn-md mr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Favorites Num

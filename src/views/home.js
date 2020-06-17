@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Header from './components/header';
-import CharacterCard from './components/character-card';
-import PlanetCard from './components/planet-card';
+import Header from '../components/header';
+import CharacterCard from '../components/character-card';
+import PlanetCard from '../components/planet-card';
 
-const App = () => {
+const Home = () => {
 
-    const [character, setCharacter] = useState({
+    const [characters, setCharacters] = useState({
         results: [],
     })
 
@@ -23,7 +23,7 @@ const App = () => {
             .then(response => response.json())
             .then(result => {
                 console.log(result);
-                setCharacter(prevState => {
+                setCharacters(prevState => {
                     return { ...prevState, ...result }
                 })
             })
@@ -56,7 +56,7 @@ const App = () => {
     }
 
     useEffect(() => {
-        getCharacters("https://swapi.dev/api/people/");
+        getCharacters("https://swapi.dev/api/people/"); 
         getPlanets("https://swapi.dev/api/planets/")
     }, []);
 
@@ -65,12 +65,12 @@ const App = () => {
             <div className="container-fluid">
                 <Header />
                 <div className="menu">
-                    <h3>Characters</h3>
+                    <h2>Characters</h2>
                     <div className="carrousel">
                         {
-                            character.results.length > 0 ?
+                            characters.results.length > 0 ?
                                 (
-                                    character.results.map((elem, index, arr) => {
+                                    characters.results.map((elem, index, arr) => {
                                         return (
                                             <CharacterCard key={index} img={index + 1} name={elem.name} gender={elem.gender} hair_color={elem.hair_color} eye_color={elem.eye_color} />
                                         )
@@ -114,4 +114,4 @@ const App = () => {
     )
 }
 
-export default App
+export default Home
