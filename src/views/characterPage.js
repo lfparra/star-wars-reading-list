@@ -13,8 +13,6 @@ const CharacterPage = (props) => {
         actions.specificCharacter(`https://swapi.dev/api/people/${props.match.params.name}/`)
     }, []);
 
-    console.log(useEffect)
-
     return (
         <>
             <div className="container-fluid">
@@ -28,24 +26,66 @@ const CharacterPage = (props) => {
                                     alt="..." />
                             </div>
                             <div class=" col-7">
+
                                 <div class="card-body">
                                     {
                                         store.specificCharacter !== null ?
                                             (
                                                 <>
-                                                    <h2 class="card-title">{store.specificCharacter.name}</h2>
-                                                    <h5>Height: {store.specificCharacter.height}</h5>
-                                                    <h5>Mass: {store.specificCharacter.mass}</h5>
-                                                    <h5>Hair Color: {store.specificCharacter.hair_color}</h5>
-                                                    <h5>Skin Color: {store.specificCharacter.skin_color}</h5>
-                                                    <h5>Eye Color: {store.specificCharacter.eye_color}</h5>
-                                                    <h5>Birth Year: {store.specificCharacter.birth_year}</h5>
-                                                    <h5>Gender: {store.specificCharacter.gender}</h5>
-                                                    <h5>Homeworld: {store.specificCharacter.homeworld}</h5>
-                                                    <h5>Films: {store.specificCharacter.films}</h5>
-                                                    <h5>Species: {store.specificCharacter.species}</h5>
-                                                    <h5>Vehicles: {store.specificCharacter.vehicles}</h5>
-                                                    <h5>Starships: {store.specificCharacter.starships}</h5>
+                                                    <h2 className="card-title d-flex justify-content-center">{store.specificCharacter.name}</h2>
+
+                                                    <div className="row d-flex justify-content-center" id="description">
+                                                        <div className="offset-1 col-4 ">
+                                                            <span className="font-weight-bold ">Height : </span>
+                                                        </div>
+                                                        <div className="col-7">
+                                                            <span className="font-weight-light ">{store.specificCharacter.height}</span>
+                                                        </div>
+                                                        <div className="offset-1 col-4">
+                                                            <span className="font-weight-bold">Mass : </span>
+                                                        </div>
+                                                        <div className="col-7">
+                                                            <span className="font-weight-light">{store.specificCharacter.mass}</span>
+                                                        </div>
+                                                        <div className="offset-1 col-4">
+                                                            <span className="font-weight-bold">Hair Color : </span>
+                                                        </div>
+                                                        <div className="col-7">
+                                                            <span className="font-weight-light">{store.specificCharacter.hair_color}</span>
+                                                        </div>
+                                                        <div className="offset-1 col-4">
+                                                            <span className="font-weight-bold">Skin Color : </span>
+                                                        </div>
+                                                        <div className="col-7">
+                                                            <span className="font-weight-light">{store.specificCharacter.skin_color}</span>
+                                                        </div>
+                                                        <div className="offset-1 col-4">
+                                                            <span className="font-weight-bold">Eye Color : </span>
+                                                        </div>
+                                                        <div className="col-7">
+                                                            <span className="font-weight-light">{store.specificCharacter.eye_color}</span>
+                                                        </div>
+                                                        <div className="offset-1 col-4">
+                                                            <span className="font-weight-bold">Birth Year : </span>
+                                                        </div>
+                                                        <div className="col-7">
+                                                            <span className="font-weight-light">{store.specificCharacter.birth_year}</span>
+                                                        </div>
+                                                        <div className="offset-1 col-4">
+                                                            <span className="font-weight-bold">Gender : </span>
+                                                        </div>
+                                                        <div className="col-7">
+                                                            <span className="font-weight-light">{store.specificCharacter.gender}</span>
+                                                        </div>
+                                                        
+                                                        <div className="offset-1 col-4">
+                                                            <span className="font-weight-bold">Species : </span>
+                                                        </div>
+                                                        <div className="col-7">
+                                                            <span className="font-weight-light">{store.specificCharacter.species}</span>
+                                                        </div>
+                                                        
+                                                    </div>
                                                 </>
                                             ) : (
                                                 <div className="d-flex justify-content-center ml-auto mr-auto">

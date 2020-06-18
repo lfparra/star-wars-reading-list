@@ -1,6 +1,6 @@
 .navbar {
     width: 100%;
-    height: 70px;
+    height: 80px;
     background-color: #1B1B25;
     border-bottom: 0.2px solid #44445c;
     padding: 0;
@@ -8,15 +8,23 @@
 
 .navbar-brand > img {
     height: 80px;
-    width: 110px;
-    position: absolute;
-    top: 0%
-    
+    width: 110px;   
+}
+
+ .navbar .options {
+    color: #FFE81F;
+    font-size: 35px;
+}
+
+.navbar .options:hover {
+    font-weight: bold;
+    letter-spacing: 1.5;
+    text-decoration: none;
 }
 
 .dropdown {
     position: relative;
-    top: 2%
+    top: -10%
 }
 .dropdown > .btn {
     background-color: #FFE81F;
@@ -30,7 +38,6 @@
     outline: none;
 }
 .dropdown span {
-    
     border-radius: 50%;
     background-color: #1B1B25;
     color: #FFE81F;

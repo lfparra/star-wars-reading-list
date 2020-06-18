@@ -3,7 +3,8 @@ const getState = ({getStore, getActions, setStore}) => {
         store : {
             characters: null,
             planets: null,
-            specificCharacter: null
+            specificCharacter: null,
+            specificPlanet: null
         },
 
         actions : {
@@ -32,6 +33,14 @@ const getState = ({getStore, getActions, setStore}) => {
                 console.log(data);
                 setStore({
                     specificCharacter: data
+                })
+            },
+            specificPlanet: async url => {
+                const resp = await fetch(url);
+                const data = await resp.json();
+                console.log(data);
+                setStore({
+                    specificPlanet: data
                 })
             },
 

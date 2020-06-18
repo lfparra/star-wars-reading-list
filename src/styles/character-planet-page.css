@@ -1,19 +1,31 @@
 .page .card{
-     width: 70%; 
+     width: 80%; 
+     margin-top: 30px
 }
 
 .page .row {
-    height: 40rem;
+    height: 42rem;
 }
 .page img {
-    height: 40rem;
+    height: 42rem;
     object-fit: fill; 
 }
 
-.page h2 {
+.card-title {
     margin-bottom: 25px;
 }
 
-.page h5 {
-    margin: 20px;
+#description {
+    height: 100%
+}
+
+#description .col-4, .col-8 {
+    height: 65px;
+}
+
+
+.page span {
+    font-size: 22px;
+    word-spacing: 2px;
+    
 }

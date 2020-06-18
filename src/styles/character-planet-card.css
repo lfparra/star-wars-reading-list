@@ -1,9 +1,14 @@
+.menu {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
 h2 {
-    margin: 5px 0px;
+    margin: 15px 25px;
 }
 
 .cambioPagina {
-    margin: 5px 30px 5px 0;
+    margin: 15px 30px 5px 25px;
 }
 .cambioPagina > .btn {
     background-color: #FFE81F;
@@ -23,9 +28,7 @@ h2 {
     box-shadow: none;
 }
 
-.menu {
-    width: 100%;
-}
+
 .carrousel {
     display: flex;
     flex-wrap: wrap;
@@ -47,9 +50,7 @@ h2 {
 
 .card {
     width: 18rem;
-    /* height: 18rem; */
     background-color: #1B1B25;
-    margin: 10px 20px 0px 0px;
     border: 1px solid #FFE81F;    
 }
 
