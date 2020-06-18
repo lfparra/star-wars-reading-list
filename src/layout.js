@@ -7,7 +7,6 @@ import NotFound from './views/notFound';
 import Header from './components/header';
 import inyectContext from './store/layoutContext';
 
-
 const Layout = (props) => {
     return (
         <>
