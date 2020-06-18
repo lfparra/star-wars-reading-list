@@ -28,7 +28,7 @@ h2 {
 }
 .carrousel {
     display: flex;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     overflow: scroll;
     overflow-y: unset;
     
