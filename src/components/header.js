@@ -5,8 +5,6 @@ import '../styles/header.css'
 
 const Header = (props) => {
 
-    console.log(props.location.pathname);
-
     const { store, actions } = useContext(Context);
 
     return (
@@ -30,11 +28,8 @@ const Header = (props) => {
                         <button className="btn btn-secondary dropdown-toggle btn-lg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Favorites
                         </button>
-                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                             <a className="dropdown-item" href="#">Action</a>
-                            {
-                                
-                            }
                             <a className="dropdown-item" href="#">Another action</a>
                             <a className="dropdown-item" href="#">Something else here</a>
                         </div>

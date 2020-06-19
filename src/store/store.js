@@ -6,7 +6,7 @@ const getState = ({getStore, getActions, setStore}) => {
             specificCharacter: null,
             specificPlanet: null,
             activeUrl: null,
-            favoriteCharacter: null
+            favoriteList: [],
         },
 
         actions : {
@@ -49,6 +49,13 @@ const getState = ({getStore, getActions, setStore}) => {
                     
                 })
             },
+
+            addFavoriteList: (name) =>{
+        
+                setStore({
+                    favoriteList:  [...getStore().favoriteList, name]
+                })
+            }
 
         }
     }

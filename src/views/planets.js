@@ -35,10 +35,6 @@ const Planets = (props) => {
                                                     </li>
                                                     <li className={"page-item" + (store.activeUrl === "" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/")}>1</a></li>
                                                     <li className={"page-item" + (store.activeUrl === "2" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=2")} >2</a></li>
-                                                    <li className={"page-item" + (store.activeUrl === "3" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=3")}>3</a></li>
-                                                    <li className={"page-item" + (store.activeUrl === "4" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=4")}>4</a></li>
-                                                    <li className={"page-item" + (store.activeUrl === "5" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=5")}>5</a></li>
-                                                    <li className={"page-item" + (store.activeUrl === "6" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=6")}>6</a></li>
                                                     
                                                     <li className="page-item" onClick={() => nextPage()}>
                                                         <a className="page-link" href="#" aria-label="Next">
@@ -59,10 +55,6 @@ const Planets = (props) => {
                                                     </li>
                                                     <li className={"page-item" + (store.activeUrl === "" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/")}>1</a></li>
                                                     <li className={"page-item" + (store.activeUrl === "2" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=2")} >2</a></li>
-                                                    <li className={"page-item" + (store.activeUrl === "3" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=3")}>3</a></li>
-                                                    <li className={"page-item" + (store.activeUrl === "4" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=4")}>4</a></li>
-                                                    <li className={"page-item" + (store.activeUrl === "5" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=5")}>5</a></li>
-                                                    <li className={"page-item" + (store.activeUrl === "6" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=6")}>6</a></li>
 
                                                     <li className="page-item">
                                                         <a className="page-link" href="#" aria-label="Next">
@@ -82,10 +74,6 @@ const Planets = (props) => {
                                                             </li>
                                                             <li className={"page-item" + (store.activeUrl === "" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/")}>1</a></li>
                                                             <li className={"page-item" + (store.activeUrl === "2" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=2")} >2</a></li>
-                                                            <li className={"page-item" + (store.activeUrl === "3" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=3")}>3</a></li>
-                                                            <li className={"page-item" + (store.activeUrl === "4" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=4")}>4</a></li>
-                                                            <li className={"page-item" + (store.activeUrl === "5" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=5")}>5</a></li>
-                                                            <li className={"page-item" + (store.activeUrl === "6" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=6")}>6</a></li>
                                                             <li className="page-item" onClick={() => nextPage()}>
                                                                 <a className="page-link" href="#" aria-label="Next">
                                                                     <span aria-hidden="true">&raquo;</span>
