@@ -19,7 +19,7 @@ const PlanetCard = (props) => {
                         <p className="card-text">Terrain: {props.terrain}</p>
                         <div className="card-buttons d-flex">
                         <Link 
-                            to={`/planetPage/${(props.url.replace("http://swapi.dev/api/planets/","").replace("/", ""))}`}>
+                            to={`/planetPage/${(props.url.replace("http://swapi.dev/api/planets/","").replace("/", ""))}`}
                             className="btn btn-light"
                             >Learn more!</Link>
                             

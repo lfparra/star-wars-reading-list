@@ -20,21 +20,79 @@ const Planets = (props) => {
 
                 <div className="menu">
                     <h2>Planets</h2>
-                    <div className="cambioPagina d-flex">
+                    <div className="cambioPagina d-flex justify-content-center">
                         {
                             store.planets !== null ?
                                 (
                                     store.planets.previous === null ?
                                         (
-                                            <button onClick={() => nextPage()} className="btn btn-light ml-auto">Next</button>
+                                            <nav aria-label="Page navigation example">
+                                                <ul className="pagination">
+                                                    <li className="page-item">
+                                                        <a className="page-link" href="#" aria-label="Previous">
+                                                            <span aria-hidden="true">&laquo;</span>
+                                                        </a>
+                                                    </li>
+                                                    <li className={"page-item" + (store.activeUrl === "" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/")}>1</a></li>
+                                                    <li className={"page-item" + (store.activeUrl === "2" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=2")} >2</a></li>
+                                                    <li className={"page-item" + (store.activeUrl === "3" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=3")}>3</a></li>
+                                                    <li className={"page-item" + (store.activeUrl === "4" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=4")}>4</a></li>
+                                                    <li className={"page-item" + (store.activeUrl === "5" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=5")}>5</a></li>
+                                                    <li className={"page-item" + (store.activeUrl === "6" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=6")}>6</a></li>
+                                                    
+                                                    <li className="page-item" onClick={() => nextPage()}>
+                                                        <a className="page-link" href="#" aria-label="Next">
+                                                            <span aria-hidden="true">&raquo;</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
 
                                         ) : (store.planets.next === null ? (
 
-                                            <button onClick={() => previousPage()} className="btn btn-light mr-auto">Previous</button>
+                                            <nav aria-label="Page navigation example">
+                                                <ul className="pagination">
+                                                    <li className="page-item" onClick={() => previousPage()}>
+                                                        <a className="page-link" href="#" aria-label="Previous">
+                                                            <span aria-hidden="true">&laquo;</span>
+                                                        </a>
+                                                    </li>
+                                                    <li className={"page-item" + (store.activeUrl === "" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/")}>1</a></li>
+                                                    <li className={"page-item" + (store.activeUrl === "2" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=2")} >2</a></li>
+                                                    <li className={"page-item" + (store.activeUrl === "3" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=3")}>3</a></li>
+                                                    <li className={"page-item" + (store.activeUrl === "4" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=4")}>4</a></li>
+                                                    <li className={"page-item" + (store.activeUrl === "5" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=5")}>5</a></li>
+                                                    <li className={"page-item" + (store.activeUrl === "6" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=6")}>6</a></li>
+
+                                                    <li className="page-item">
+                                                        <a className="page-link" href="#" aria-label="Next">
+                                                            <span aria-hidden="true">&raquo;</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
                                         ) : (
                                                 <>
-                                                    <button onClick={() => previousPage()} className="btn btn-light mr-auto">Previous</button>
-                                                    <button onClick={() => nextPage()} className="btn btn-light ml-auto">Next</button>
+                                                    <nav aria-label="Page navigation example">
+                                                        <ul className="pagination">
+                                                            <li className="page-item" onClick={() => previousPage()}>
+                                                                <a className="page-link" href="#" aria-label="Previous">
+                                                                    <span aria-hidden="true">&laquo;</span>
+                                                                </a>
+                                                            </li>
+                                                            <li className={"page-item" + (store.activeUrl === "" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/")}>1</a></li>
+                                                            <li className={"page-item" + (store.activeUrl === "2" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=2")} >2</a></li>
+                                                            <li className={"page-item" + (store.activeUrl === "3" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=3")}>3</a></li>
+                                                            <li className={"page-item" + (store.activeUrl === "4" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=4")}>4</a></li>
+                                                            <li className={"page-item" + (store.activeUrl === "5" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=5")}>5</a></li>
+                                                            <li className={"page-item" + (store.activeUrl === "6" ? " active" : "")}><a className="page-link" href="#" onClick={() => actions.getPlanets("https://swapi.dev/api/planets/?page=6")}>6</a></li>
+                                                            <li className="page-item" onClick={() => nextPage()}>
+                                                                <a className="page-link" href="#" aria-label="Next">
+                                                                    <span aria-hidden="true">&raquo;</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
                                                 </>
                                             )
                                         )

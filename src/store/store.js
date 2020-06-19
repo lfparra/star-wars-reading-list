@@ -4,7 +4,9 @@ const getState = ({getStore, getActions, setStore}) => {
             characters: null,
             planets: null,
             specificCharacter: null,
-            specificPlanet: null
+            specificPlanet: null,
+            activeUrl: null,
+            favoriteCharacter: null
         },
 
         actions : {
@@ -14,7 +16,8 @@ const getState = ({getStore, getActions, setStore}) => {
                 const data = await resp.json();
                 console.log(data);
                 setStore({
-                    characters: data
+                    characters: data,
+                    activeUrl: url.replace("https://swapi.dev/api/people/","").replace("?page=","")
                 })
             },
 
@@ -23,7 +26,8 @@ const getState = ({getStore, getActions, setStore}) => {
                 const data = await resp.json();
                 console.log(data);
                 setStore({
-                    planets: data
+                    planets: data,
+                    activeUrl: url.replace("https://swapi.dev/api/planets/","").replace("?page=","")
                 })
             },
 
@@ -32,7 +36,8 @@ const getState = ({getStore, getActions, setStore}) => {
                 const data = await resp.json();
                 console.log(data);
                 setStore({
-                    specificCharacter: data
+                    specificCharacter: data,
+                    
                 })
             },
             specificPlanet: async url => {
@@ -40,7 +45,8 @@ const getState = ({getStore, getActions, setStore}) => {
                 const data = await resp.json();
                 console.log(data);
                 setStore({
-                    specificPlanet: data
+                    specificPlanet: data,
+                    
                 })
             },
 

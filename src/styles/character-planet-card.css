@@ -7,17 +7,21 @@ h2 {
     margin: 15px 25px;
 }
 
-.cambioPagina {
-    margin: 15px 30px 5px 25px;
-}
-.cambioPagina > .btn {
+
+.cambioPagina a {
     background-color: #FFE81F;
     color: black;
-    border: none;
+    border: 1px solid #1B1B25;
     outline: none;
 }
 
-.cambioPagina > .btn:hover {
+.cambioPagina  a:hover {
+    color: #FFE81F;
+    background-color: #1B1B25;
+    border: 1px solid #FFE81F;
+}
+
+.page-item.active .page-link {
     color: #FFE81F;
     background-color: #1B1B25;
     border: 1px solid #FFE81F;
@@ -27,7 +31,6 @@ h2 {
     outline: none;
     box-shadow: none;
 }
-
 
 .carrousel {
     display: flex;

@@ -1,13 +1,17 @@
+.goBackMenu button {
+    background-color: #FFE81F;
+}
+
 .page .card{
      width: 80%; 
-     margin-top: 30px
+     margin-top: 0px
 }
 
 .page .row {
-    height: 42rem;
+    height: 48rem;
 }
 .page img {
-    height: 42rem;
+    height: 48rem;
     object-fit: fill; 
 }
 
@@ -20,12 +24,11 @@
 }
 
 #description .col-4, .col-8 {
-    height: 65px;
+    height: 75px;
 }
 
-
 .page span {
-    font-size: 22px;
+    font-size: 28px;
     word-spacing: 2px;
     
 }

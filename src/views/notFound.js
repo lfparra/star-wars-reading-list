@@ -4,7 +4,7 @@ const NotFound = () => {
     return (
         <div className="container-fluid">
             <div className="row d-flex justify-content-center">
-                 <img src="https://i.pinimg.com/originals/12/62/4e/12624e6060a51a0fa0cfbc8ccbc7455e.jpg" alt="" />
+                 <img src="https://b2.crackwatch.com/file/crackwatch/public/404.png" alt="" />
             </div>
         </div>
     )

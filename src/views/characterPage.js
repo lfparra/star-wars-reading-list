@@ -6,6 +6,7 @@ const CharacterPage = (props) => {
 
     console.log(props.location.pathname);
     console.log(props.match.params.name) /* 1 */
+    console.log(props.history.goBack)
 
     const { store, actions } = useContext(Context);
 
@@ -16,22 +17,25 @@ const CharacterPage = (props) => {
     return (
         <>
             <div className="container-fluid">
+                <div className="goBackMenu d-flex">
+                    <button onClick={() => props.history.goBack()} type="button" className="btn btn-lg ml-auto mr-5 mb-0 mt-1"><i class="fas fa-chevron-left"></i></button>
+                </div>
 
-                <div className="page d-flex justify-content-center">
-                    <div class="card mb-3 " /* style="max-width: 540px;" */>
-                        <div class="row no-gutters">
-                            <div class=" col-5">
-                                <img src={`https://starwars-visualguide.com/assets/img/characters/${props.match.params.name}.jpg`}
-                                    className="card-img"
-                                    alt="..." />
-                            </div>
-                            <div class=" col-7">
+                {
+                    store.specificCharacter !== null ?
+                        (
+                            <>
+                                <div className="page d-flex justify-content-center">
+                                    <div className="card mb-3 " /* style="max-width: 540px;" */>
+                                        <div className="row no-gutters">
+                                            <div className=" col-5">
+                                                <img src={`https://starwars-visualguide.com/assets/img/characters/${props.match.params.name}.jpg`}
+                                                    className="card-img"
+                                                    alt={store.specificCharacter.name} />
+                                            </div>
+                                            <div className=" col-7">
 
-                                <div class="card-body">
-                                    {
-                                        store.specificCharacter !== null ?
-                                            (
-                                                <>
+                                                <div className="card-body">
                                                     <h2 className="card-title d-flex justify-content-center">{store.specificCharacter.name}</h2>
 
                                                     <div className="row d-flex justify-content-center" id="description">
@@ -77,31 +81,31 @@ const CharacterPage = (props) => {
                                                         <div className="col-7">
                                                             <span className="font-weight-light">{store.specificCharacter.gender}</span>
                                                         </div>
-                                                        
+
                                                         <div className="offset-1 col-4">
                                                             <span className="font-weight-bold">Species : </span>
                                                         </div>
                                                         <div className="col-7">
                                                             <span className="font-weight-light">{store.specificCharacter.species}</span>
                                                         </div>
-                                                        
-                                                    </div>
-                                                </>
-                                            ) : (
-                                                <div className="d-flex justify-content-center ml-auto mr-auto">
-                                                    <div className="spinner-border" role="status">
-                                                        <span className="sr-only">Loading...</span>
                                                     </div>
                                                 </div>
-                                            )
-                                    }
-
-
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </>
+                        ) : (
+                            <div className="d-flex justify-content-center ml-auto mr-auto">
+                                <div className="spinner-border" role="status">
+                                    <span className="sr-only">Loading...</span>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        )
+                }
+
+
+
             </div>
         </>
     )
