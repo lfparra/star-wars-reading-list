@@ -1,10 +1,11 @@
 import React from 'react';
+import NotFoundImage from '../images/notfound.png'
 
 const NotFound = () => {
     return (
         <div className="container-fluid">
             <div className="row d-flex justify-content-center">
-                 <img src="https://b2.crackwatch.com/file/crackwatch/public/404.png" alt="" />
+                 <img id="notFound" src={NotFoundImage} alt="Not Found" />
             </div>
         </div>
     )

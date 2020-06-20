@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { Context } from '../store/layoutContext';
+import Carousel1 from '../images/carousel1.png';
+import Carousel2 from '../images/carousel2.jpg';
+import Carousel3 from '../images/carousel3.jpg';
 
 const Home = (props) => {
 
@@ -17,16 +19,16 @@ const Home = (props) => {
                 <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel" data-interval="3000">
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png"
-                                className="d-block w-75 h-50 ml-auto mr-auto" alt="..." />
+                            <img src={Carousel1}
+                                className="d-block w-75 ml-auto mr-auto" alt="..." />
                         </div>
                         <div className="carousel-item">
-                            <img src="https://i.blogs.es/69fdcc/star-wars-saga/1366_2000.jpg"
-                                className="d-block w-75 h-50 ml-auto mr-auto" alt="..." />
+                            <img src={Carousel2}
+                                className="d-block w-75  ml-auto mr-auto" alt="..." />
                         </div>
                         <div className="carousel-item">
-                            <img src="https://cherry-brightspot.s3.amazonaws.com/d3/52/3cce57164534a50d08dfb1b8ace7/original.jpg"
-                                className="d-block w-75 h-50 ml-auto mr-auto" alt="..." />
+                            <img src={Carousel3}
+                                className="d-block w-75  ml-auto mr-auto" alt="..." />
                         </div>
                     </div>
                 </div>
